@@ -183,8 +183,12 @@ src="https://www.facebook.com/tr?id=631426645796596&ev=PageView&noscript=1"
     display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center;
     position:relative;z-index:1;
   }
-  .hero h1{font-size:2.9rem;color:var(--white);margin-bottom:18px;}
+  .hero h1{color:var(--white);margin-bottom:18px;}
   .hero h1 em{font-style:normal;color:var(--gold-300);}
+  .hero h1 .title-line{display:block;}
+  .hero h1 .title-line-1{font-size:clamp(1.7rem, 3.1vw, 2.6rem);}
+  .hero h1 .title-line-2{font-size:clamp(1.7rem, 3.1vw, 2.6rem);}
+  .hero h1 .title-line-3{font-size:clamp(2rem, 3.7vw, 3.1rem);}
   .hero p.lead{font-size:1.08rem;color:rgba(251,245,230,.85);margin-bottom:32px;max-width:520px;}
   .hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:38px;}
   .hero-stats{display:flex;gap:34px;flex-wrap:wrap;}
@@ -192,22 +196,25 @@ src="https://www.facebook.com/tr?id=631426645796596&ev=PageView&noscript=1"
   .hero-stats div span{font-size:.78rem;color:rgba(251,245,230,.7);}
   .hero-art{
     position:relative;
-    background:linear-gradient(160deg, rgba(212,166,58,.18), rgba(212,166,58,.03));
+    background:
+      linear-gradient(160deg, rgba(212,166,58,.18), rgba(212,166,58,.03)),
+      var(--maroon-800);
     border:1px solid rgba(212,166,58,.35);
     border-radius:24px;
     padding:28px;
     box-shadow:var(--shadow-lg);
   }
-  .hero-art img{border-radius:16px;}
+  .hero-art img{border-radius:16px;position:relative;z-index:1;}
   .hero-art .badge{
     position:absolute;bottom:-20px;left:32px;z-index:2;
     background:var(--white);color:var(--maroon-900);
-    padding:14px 20px;border-radius:16px;
+    padding:12px 18px;border-radius:16px;
     box-shadow:var(--shadow-lg);
     border:1px solid rgba(122,26,31,.08);
-    font-weight:700;font-size:.85rem;
-    display:flex;gap:12px;align-items:center;
+    font-weight:700;font-size:.75rem;
+    display:flex;gap:10px;align-items:center;
   }
+  .hero-art .badge small{font-size:.85em;}
   .hero-art .badge .badge-ico{
     flex:none;width:36px;height:36px;border-radius:10px;
     background:linear-gradient(135deg,var(--gold-300),var(--gold-600));
@@ -271,10 +278,12 @@ src="https://www.facebook.com/tr?id=631426645796596&ev=PageView&noscript=1"
   .car-info .price strong{color:var(--maroon-800);font-size:1.1rem;font-family:Georgia,serif;}
   .car-info .price span{font-size:.7rem;color:var(--ink-soft);}
   .car-info .mini-btn{
-    margin-top:12px;display:block;text-align:center;padding:9px;border-radius:10px;
-    background:var(--maroon-900);color:var(--gold-300);font-size:.8rem;font-weight:700;
+    display:block;text-align:center;padding:9px 4px;border-radius:10px;
+    background:var(--maroon-900);color:var(--gold-300);font-size:.75rem;font-weight:700;
   }
   .car-info .mini-btn:hover{background:var(--maroon-800);}
+  .car-info .mini-btn-row{margin-top:12px;display:flex;gap:8px;}
+  .car-info .mini-btn-row .mini-btn{flex:1;}
   .fleet-more{text-align:center;margin-top:40px;}
 
   /* ---------- SERVICES / TERMS ---------- */
@@ -401,7 +410,6 @@ src="https://www.facebook.com/tr?id=631426645796596&ev=PageView&noscript=1"
   @media(max-width:720px){
     .nav-links,.nav-cta{display:none;}
     .nav-toggle{display:block;}
-    .hero h1{font-size:2.1rem;}
     .why-grid{grid-template-columns:1fr;}
     .fleet-grid{grid-template-columns:1fr 1fr;}
     section{padding:56px 0;}
@@ -447,7 +455,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="container hero-grid">
     <div>
       <span class="eyebrow">Rental Mobil Terpercaya · Medan, Sumatera Utara</span>
-      <h1>Sewa Mobil <em>Professional</em>,<br>Tanpa Ribet, Tanpa Biaya Tersembunyi</h1>
+      <h1>
+        <span class="title-line title-line-1">Sewa Mobil <em>Professional</em>,</span>
+        <span class="title-line title-line-2">Biaya Transparan,</span>
+        <span class="title-line title-line-3">Tanpa Ribet</span>
+      </h1>
       <p class="lead">Rent Car Professional (RCP) melayani sewa mobil harian lepas kunci maupun dengan driver, mulai dari city car hingga Alphard &amp; Hiace, tersedia untuk perjalanan dalam &amp; luar kota tanpa biaya tambahan.</p>
       <div class="hero-actions">
         <a class="btn btn-gold" target="_blank" rel="noopener"
@@ -463,12 +475,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       <div class="hero-stats">
         <div><strong>22+</strong><span>Pilihan Armada</span></div>
-        <div><strong>24 Jam</strong><span>Layanan Sewa</span></div>
+        <div><strong>1 Hari</strong><span>Minimal Sewa</span></div>
         <div><strong>0 Rp</strong><span>Biaya Luar Kota*</span></div>
       </div>
     </div>
     <div class="hero-art">
-      <img src="images/cars/36.Alphard2.webp" alt="Alphard - Rent Car Professional" width="640" height="400">
+      <img src="images/cars/36.Alphard2.webp" alt="Alphard - Rent Car Professional" width="640">
       <div class="badge">
         <span>Mulai dari Rp 250.000<br><small style="font-weight:500">/ hari</small></span>
       </div>
@@ -498,8 +510,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="why-grid">
     <div class="why-card">
       <div class="ico">🕐</div>
-      <h3>Sewa 24 Jam</h3>
-      <p>Durasi sewa penuh 24 jam dengan batas pemakaian hingga pukul 23:00, fleksibel untuk kebutuhan harian Anda.</p>
+      <h3>Sewa Harian</h3>
+      <p>Durasi sewa dihitung per hari dan wajib dikembalikan paling lambat pukul 23.00, fleksibel untuk kebutuhan harian Anda.</p>
     </div>
     <div class="why-card">
       <div class="ico">🧑‍✈️</div>
@@ -525,8 +537,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="container">
     <div class="section-head">
       <span class="eyebrow">Pilihan Armada</span>
-      <h2>Daftar Mobil &amp; Harga Sewa (24 Jam)</h2>
+      <h2>Daftar Mobil &amp; Harga Sewa (Per Hari)</h2>
       <p>Harga sudah termasuk sewa lepas kunci. Tambahan driver Rp150.000/hari. Klik mobil untuk chat &amp; cek ketersediaan.</p>
+      <p style="margin-top:10px;font-size:.82rem;color:var(--maroon-800);font-weight:700;">⏰ Unit wajib dikembalikan paling lambat pukul 23.00 WIB</p>
     </div>
 
     <div class="fleet-grid">
@@ -535,152 +548,209 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="car-photo"><img src="images/cars/1.DatsunMt.webp" alt="Datsun MT" loading="lazy" width="640" height="400"></div>
         <div class="car-info">
           <span class="tag">Manual</span><h4>Datsun MT</h4>
-          <div class="price"><strong>Rp 250.000</strong><span>/24 jam</span></div>
-          <a class="mini-btn" target="_blank" rel="noopener" href="https://wa.me/628116511751?text=Halo%20Admin%2C%20saya%20mau%20sewa%20Datsun%20MT%2C%20saya%20lihat%20di%20website">Chat &amp; Booking</a>
+          <div class="price"><strong>Rp 250.000</strong><span>/hari</span></div>
+          <div class="mini-btn-row">
+            <a class="mini-btn" target="_blank" rel="noopener" href="https://wa.me/628116511751?text=Saya%20lihat%20di%20website%20RCP%2C%20mau%20sewa%20Datsun%20MT%2C%20apakah%20unit%20Datsun%20MT%20tersedia%20Admin%20Bibi%3F">Admin Bibi</a>
+            <a class="mini-btn" target="_blank" rel="noopener" href="https://wa.me/628116511753?text=Saya%20lihat%20di%20website%20RCP%2C%20mau%20sewa%20Datsun%20MT%2C%20apakah%20unit%20Datsun%20MT%20tersedia%20Admin%20Salsa%3F">Admin Salsa</a>
+          </div>
         </div>
       </div>
       <div class="car-card">
         <div class="car-photo"><img src="images/cars/2.AylaMt.webp" alt="Ayla MT" loading="lazy" width="640" height="400"></div>
         <div class="car-info">
           <span class="tag">Manual</span><h4>Ayla MT</h4>
-          <div class="price"><strong>Rp 250.000</strong><span>/24 jam</span></div>
-          <a class="mini-btn" target="_blank" rel="noopener" href="https://wa.me/628116511751?text=Halo%20Admin%2C%20saya%20mau%20sewa%20Ayla%20MT%2C%20saya%20lihat%20di%20website">Chat &amp; Booking</a>
+          <div class="price"><strong>Rp 250.000</strong><span>/hari</span></div>
+          <div class="mini-btn-row">
+            <a class="mini-btn" target="_blank" rel="noopener" href="https://wa.me/628116511751?text=Saya%20lihat%20di%20website%20RCP%2C%20mau%20sewa%20Ayla%20MT%2C%20apakah%20unit%20Ayla%20MT%20tersedia%20Admin%20Bibi%3F">Admin Bibi</a>
+            <a class="mini-btn" target="_blank" rel="noopener" href="https://wa.me/628116511753?text=Saya%20lihat%20di%20website%20RCP%2C%20mau%20sewa%20Ayla%20MT%2C%20apakah%20unit%20Ayla%20MT%20tersedia%20Admin%20Salsa%3F">Admin Salsa</a>
+          </div>
         </div>
       </div>
       <div class="car-card">
         <div class="car-photo"><img src="images/cars/4.CalyaMt.webp" alt="Calya MT" loading="lazy" width="640" height="400"></div>
         <div class="car-info">
           <span class="tag">Manual</span><h4>Calya MT</h4>
-          <div class="price"><strong>Rp 250.000</strong><span>/24 jam</span></div>
-          <a class="mini-btn" target="_blank" rel="noopener" href="https://wa.me/628116511751?text=Halo%20Admin%2C%20saya%20mau%20sewa%20Calya%20MT%2C%20saya%20lihat%20di%20website">Chat &amp; Booking</a>
+          <div class="price"><strong>Rp 250.000</strong><span>/hari</span></div>
+          <div class="mini-btn-row">
+            <a class="mini-btn" target="_blank" rel="noopener" href="https://wa.me/628116511751?text=Saya%20lihat%20di%20website%20RCP%2C%20mau%20sewa%20Calya%20MT%2C%20apakah%20unit%20Calya%20MT%20tersedia%20Admin%20Bibi%3F">Admin Bibi</a>
+            <a class="mini-btn" target="_blank" rel="noopener" href="https://wa.me/628116511753?text=Saya%20lihat%20di%20website%20RCP%2C%20mau%20sewa%20Calya%20MT%2C%20apakah%20unit%20Calya%20MT%20tersedia%20Admin%20Salsa%3F">Admin Salsa</a>
+          </div>
         </div>
       </div>
       <div class="car-card">
         <div class="car-photo"><img src="images/cars/3.AylaAt.webp" alt="Ayla AT" loading="lazy" width="640" height="400"></div>
         <div class="car-info">
           <span class="tag">Automatic</span><h4>Ayla AT</h4>
-          <div class="price"><strong>Rp 300.000</strong><span>/24 jam</span></div>
-          <a class="mini-btn" target="_blank" rel="noopener" href="https://wa.me/628116511751?text=Halo%20Admin%2C%20saya%20mau%20sewa%20Ayla%20AT%2C%20saya%20lihat%20di%20website">Chat &amp; Booking</a>
+          <div class="price"><strong>Rp 300.000</strong><span>/hari</span></div>
+          <div class="mini-btn-row">
+            <a class="mini-btn" target="_blank" rel="noopener" href="https://wa.me/628116511751?text=Saya%20lihat%20di%20website%20RCP%2C%20mau%20sewa%20Ayla%20AT%2C%20apakah%20unit%20Ayla%20AT%20tersedia%20Admin%20Bibi%3F">Admin Bibi</a>
+            <a class="mini-btn" target="_blank" rel="noopener" href="https://wa.me/628116511753?text=Saya%20lihat%20di%20website%20RCP%2C%20mau%20sewa%20Ayla%20AT%2C%20apakah%20unit%20Ayla%20AT%20tersedia%20Admin%20Salsa%3F">Admin Salsa</a>
+          </div>
         </div>
       </div>
       <div class="car-card">
         <div class="car-photo"><img src="images/cars/5.CalyaAt.webp" alt="Calya AT" loading="lazy" width="640" height="400"></div>
         <div class="car-info">
           <span class="tag">Automatic</span><h4>Calya AT</h4>
-          <div class="price"><strong>Rp 300.000</strong><span>/24 jam</span></div>
-          <a class="mini-btn" target="_blank" rel="noopener" href="https://wa.me/628116511751?text=Halo%20Admin%2C%20saya%20mau%20sewa%20Calya%20AT%2C%20saya%20lihat%20di%20website">Chat &amp; Booking</a>
+          <div class="price"><strong>Rp 300.000</strong><span>/hari</span></div>
+          <div class="mini-btn-row">
+            <a class="mini-btn" target="_blank" rel="noopener" href="https://wa.me/628116511751?text=Saya%20lihat%20di%20website%20RCP%2C%20mau%20sewa%20Calya%20AT%2C%20apakah%20unit%20Calya%20AT%20tersedia%20Admin%20Bibi%3F">Admin Bibi</a>
+            <a class="mini-btn" target="_blank" rel="noopener" href="https://wa.me/628116511753?text=Saya%20lihat%20di%20website%20RCP%2C%20mau%20sewa%20Calya%20AT%2C%20apakah%20unit%20Calya%20AT%20tersedia%20Admin%20Salsa%3F">Admin Salsa</a>
+          </div>
         </div>
       </div>
       <div class="car-card">
         <div class="car-photo"><img src="images/cars/6.AvanzaMt.webp" alt="Avanza MT" loading="lazy" width="640" height="400"></div>
         <div class="car-info">
           <span class="tag">Manual</span><h4>Avanza MT</h4>
-          <div class="price"><strong>Rp 300.000</strong><span>/24 jam</span></div>
-          <a class="mini-btn" target="_blank" rel="noopener" href="https://wa.me/628116511751?text=Halo%20Admin%2C%20saya%20mau%20sewa%20Avanza%20MT%2C%20saya%20lihat%20di%20website">Chat &amp; Booking</a>
+          <div class="price"><strong>Rp 300.000</strong><span>/hari</span></div>
+          <div class="mini-btn-row">
+            <a class="mini-btn" target="_blank" rel="noopener" href="https://wa.me/628116511751?text=Saya%20lihat%20di%20website%20RCP%2C%20mau%20sewa%20Avanza%20MT%2C%20apakah%20unit%20Avanza%20MT%20tersedia%20Admin%20Bibi%3F">Admin Bibi</a>
+            <a class="mini-btn" target="_blank" rel="noopener" href="https://wa.me/628116511753?text=Saya%20lihat%20di%20website%20RCP%2C%20mau%20sewa%20Avanza%20MT%2C%20apakah%20unit%20Avanza%20MT%20tersedia%20Admin%20Salsa%3F">Admin Salsa</a>
+          </div>
         </div>
       </div>
       <div class="car-card">
         <div class="car-photo"><img src="images/cars/9.Brio.webp" alt="Brio MT" loading="lazy" width="640" height="400"></div>
         <div class="car-info">
           <span class="tag">Manual</span><h4>Brio MT</h4>
-          <div class="price"><strong>Rp 350.000</strong><span>/24 jam</span></div>
-          <a class="mini-btn" target="_blank" rel="noopener" href="https://wa.me/628116511751?text=Halo%20Admin%2C%20saya%20mau%20sewa%20Brio%20MT%2C%20saya%20lihat%20di%20website">Chat &amp; Booking</a>
+          <div class="price"><strong>Rp 350.000</strong><span>/hari</span></div>
+          <div class="mini-btn-row">
+            <a class="mini-btn" target="_blank" rel="noopener" href="https://wa.me/628116511751?text=Saya%20lihat%20di%20website%20RCP%2C%20mau%20sewa%20Brio%20MT%2C%20apakah%20unit%20Brio%20MT%20tersedia%20Admin%20Bibi%3F">Admin Bibi</a>
+            <a class="mini-btn" target="_blank" rel="noopener" href="https://wa.me/628116511753?text=Saya%20lihat%20di%20website%20RCP%2C%20mau%20sewa%20Brio%20MT%2C%20apakah%20unit%20Brio%20MT%20tersedia%20Admin%20Salsa%3F">Admin Salsa</a>
+          </div>
         </div>
       </div>
       <div class="car-card">
         <div class="car-photo"><img src="images/cars/10.WulingMt.webp" alt="Wuling MT" loading="lazy" width="640" height="400"></div>
         <div class="car-info">
           <span class="tag">Manual</span><h4>Wuling MT</h4>
-          <div class="price"><strong>Rp 350.000</strong><span>/24 jam</span></div>
-          <a class="mini-btn" target="_blank" rel="noopener" href="https://wa.me/628116511751?text=Halo%20Admin%2C%20saya%20mau%20sewa%20Wuling%20MT%2C%20saya%20lihat%20di%20website">Chat &amp; Booking</a>
+          <div class="price"><strong>Rp 350.000</strong><span>/hari</span></div>
+          <div class="mini-btn-row">
+            <a class="mini-btn" target="_blank" rel="noopener" href="https://wa.me/628116511751?text=Saya%20lihat%20di%20website%20RCP%2C%20mau%20sewa%20Wuling%20MT%2C%20apakah%20unit%20Wuling%20MT%20tersedia%20Admin%20Bibi%3F">Admin Bibi</a>
+            <a class="mini-btn" target="_blank" rel="noopener" href="https://wa.me/628116511753?text=Saya%20lihat%20di%20website%20RCP%2C%20mau%20sewa%20Wuling%20MT%2C%20apakah%20unit%20Wuling%20MT%20tersedia%20Admin%20Salsa%3F">Admin Salsa</a>
+          </div>
         </div>
       </div>
       <div class="car-card">
         <div class="car-photo"><img src="images/cars/7.AvanzaAt.webp" alt="All New Avanza MT" loading="lazy" width="640" height="400"></div>
         <div class="car-info">
           <span class="tag">Manual</span><h4>All New Avanza MT</h4>
-          <div class="price"><strong>Rp 400.000</strong><span>/24 jam</span></div>
-          <a class="mini-btn" target="_blank" rel="noopener" href="https://wa.me/628116511751?text=Halo%20Admin%2C%20saya%20mau%20sewa%20All%20New%20Avanza%20MT%2C%20saya%20lihat%20di%20website">Chat &amp; Booking</a>
+          <div class="price"><strong>Rp 400.000</strong><span>/hari</span></div>
+          <div class="mini-btn-row">
+            <a class="mini-btn" target="_blank" rel="noopener" href="https://wa.me/628116511751?text=Saya%20lihat%20di%20website%20RCP%2C%20mau%20sewa%20All%20New%20Avanza%20MT%2C%20apakah%20unit%20All%20New%20Avanza%20MT%20tersedia%20Admin%20Bibi%3F">Admin Bibi</a>
+            <a class="mini-btn" target="_blank" rel="noopener" href="https://wa.me/628116511753?text=Saya%20lihat%20di%20website%20RCP%2C%20mau%20sewa%20All%20New%20Avanza%20MT%2C%20apakah%20unit%20All%20New%20Avanza%20MT%20tersedia%20Admin%20Salsa%3F">Admin Salsa</a>
+          </div>
         </div>
       </div>
       <div class="car-card">
         <div class="car-photo"><img src="images/cars/13.XeniaMt.webp" alt="Xenia MT" loading="lazy" width="640" height="400"></div>
         <div class="car-info">
           <span class="tag">Manual</span><h4>Xenia MT</h4>
-          <div class="price"><strong>Rp 400.000</strong><span>/24 jam</span></div>
-          <a class="mini-btn" target="_blank" rel="noopener" href="https://wa.me/628116511751?text=Halo%20Admin%2C%20saya%20mau%20sewa%20Xenia%20MT%2C%20saya%20lihat%20di%20website">Chat &amp; Booking</a>
+          <div class="price"><strong>Rp 400.000</strong><span>/hari</span></div>
+          <div class="mini-btn-row">
+            <a class="mini-btn" target="_blank" rel="noopener" href="https://wa.me/628116511751?text=Saya%20lihat%20di%20website%20RCP%2C%20mau%20sewa%20Xenia%20MT%2C%20apakah%20unit%20Xenia%20MT%20tersedia%20Admin%20Bibi%3F">Admin Bibi</a>
+            <a class="mini-btn" target="_blank" rel="noopener" href="https://wa.me/628116511753?text=Saya%20lihat%20di%20website%20RCP%2C%20mau%20sewa%20Xenia%20MT%2C%20apakah%20unit%20Xenia%20MT%20tersedia%20Admin%20Salsa%3F">Admin Salsa</a>
+          </div>
         </div>
       </div>
       <div class="car-card">
         <div class="car-photo"><img src="images/cars/16.XeniaAt.webp" alt="Xenia AT" loading="lazy" width="640" height="400"></div>
         <div class="car-info">
           <span class="tag">Automatic</span><h4>Xenia AT</h4>
-          <div class="price"><strong>Rp 450.000</strong><span>/24 jam</span></div>
-          <a class="mini-btn" target="_blank" rel="noopener" href="https://wa.me/628116511751?text=Halo%20Admin%2C%20saya%20mau%20sewa%20Xenia%20AT%2C%20saya%20lihat%20di%20website">Chat &amp; Booking</a>
+          <div class="price"><strong>Rp 450.000</strong><span>/hari</span></div>
+          <div class="mini-btn-row">
+            <a class="mini-btn" target="_blank" rel="noopener" href="https://wa.me/628116511751?text=Saya%20lihat%20di%20website%20RCP%2C%20mau%20sewa%20Xenia%20AT%2C%20apakah%20unit%20Xenia%20AT%20tersedia%20Admin%20Bibi%3F">Admin Bibi</a>
+            <a class="mini-btn" target="_blank" rel="noopener" href="https://wa.me/628116511753?text=Saya%20lihat%20di%20website%20RCP%2C%20mau%20sewa%20Xenia%20AT%2C%20apakah%20unit%20Xenia%20AT%20tersedia%20Admin%20Salsa%3F">Admin Salsa</a>
+          </div>
         </div>
       </div>
       <div class="car-card">
         <div class="car-photo"><img src="images/cars/17.WulingCortez2022At.webp" alt="Wuling Cortez 2022 AT" loading="lazy" width="640" height="400"></div>
         <div class="car-info">
           <span class="tag">Automatic</span><h4>Wuling Cortez 2022 AT</h4>
-          <div class="price"><strong>Rp 450.000</strong><span>/24 jam</span></div>
-          <a class="mini-btn" target="_blank" rel="noopener" href="https://wa.me/628116511751?text=Halo%20Admin%2C%20saya%20mau%20sewa%20Wuling%20Cortez%202022%20AT%2C%20saya%20lihat%20di%20website">Chat &amp; Booking</a>
+          <div class="price"><strong>Rp 450.000</strong><span>/hari</span></div>
+          <div class="mini-btn-row">
+            <a class="mini-btn" target="_blank" rel="noopener" href="https://wa.me/628116511751?text=Saya%20lihat%20di%20website%20RCP%2C%20mau%20sewa%20Wuling%20Cortez%202022%20AT%2C%20apakah%20unit%20Wuling%20Cortez%202022%20AT%20tersedia%20Admin%20Bibi%3F">Admin Bibi</a>
+            <a class="mini-btn" target="_blank" rel="noopener" href="https://wa.me/628116511753?text=Saya%20lihat%20di%20website%20RCP%2C%20mau%20sewa%20Wuling%20Cortez%202022%20AT%2C%20apakah%20unit%20Wuling%20Cortez%202022%20AT%20tersedia%20Admin%20Salsa%3F">Admin Salsa</a>
+          </div>
         </div>
       </div>
       <div class="car-card">
         <div class="car-photo"><img src="images/cars/20.InnovaReborn.webp" alt="Innova Reborn Solar MT" loading="lazy" width="640" height="400"></div>
         <div class="car-info">
           <span class="tag">Manual</span><h4>Innova Reborn Solar MT</h4>
-          <div class="price"><strong>Rp 550.000</strong><span>/24 jam</span></div>
-          <a class="mini-btn" target="_blank" rel="noopener" href="https://wa.me/628116511751?text=Halo%20Admin%2C%20saya%20mau%20sewa%20Innova%20Reborn%20Solar%20MT%2C%20saya%20lihat%20di%20website">Chat &amp; Booking</a>
+          <div class="price"><strong>Rp 550.000</strong><span>/hari</span></div>
+          <div class="mini-btn-row">
+            <a class="mini-btn" target="_blank" rel="noopener" href="https://wa.me/628116511751?text=Saya%20lihat%20di%20website%20RCP%2C%20mau%20sewa%20Innova%20Reborn%20Solar%20MT%2C%20apakah%20unit%20Innova%20Reborn%20Solar%20MT%20tersedia%20Admin%20Bibi%3F">Admin Bibi</a>
+            <a class="mini-btn" target="_blank" rel="noopener" href="https://wa.me/628116511753?text=Saya%20lihat%20di%20website%20RCP%2C%20mau%20sewa%20Innova%20Reborn%20Solar%20MT%2C%20apakah%20unit%20Innova%20Reborn%20Solar%20MT%20tersedia%20Admin%20Salsa%3F">Admin Salsa</a>
+          </div>
         </div>
       </div>
       <div class="car-card">
         <div class="car-photo"><img src="images/cars/21.InnovaReborn.webp" alt="Innova Reborn Solar AT" loading="lazy" width="640" height="400"></div>
         <div class="car-info">
           <span class="tag">Automatic</span><h4>Innova Reborn Solar AT</h4>
-          <div class="price"><strong>Rp 550.000</strong><span>/24 jam</span></div>
-          <a class="mini-btn" target="_blank" rel="noopener" href="https://wa.me/628116511751?text=Halo%20Admin%2C%20saya%20mau%20sewa%20Innova%20Reborn%20Solar%20AT%2C%20saya%20lihat%20di%20website">Chat &amp; Booking</a>
+          <div class="price"><strong>Rp 550.000</strong><span>/hari</span></div>
+          <div class="mini-btn-row">
+            <a class="mini-btn" target="_blank" rel="noopener" href="https://wa.me/628116511751?text=Saya%20lihat%20di%20website%20RCP%2C%20mau%20sewa%20Innova%20Reborn%20Solar%20AT%2C%20apakah%20unit%20Innova%20Reborn%20Solar%20AT%20tersedia%20Admin%20Bibi%3F">Admin Bibi</a>
+            <a class="mini-btn" target="_blank" rel="noopener" href="https://wa.me/628116511753?text=Saya%20lihat%20di%20website%20RCP%2C%20mau%20sewa%20Innova%20Reborn%20Solar%20AT%2C%20apakah%20unit%20Innova%20Reborn%20Solar%20AT%20tersedia%20Admin%20Salsa%3F">Admin Salsa</a>
+          </div>
         </div>
       </div>
       <div class="car-card">
         <div class="car-photo"><img src="images/cars/27.zenix.webp" alt="Zenix" loading="lazy" width="640" height="400"></div>
         <div class="car-info">
           <span class="tag">Premium</span><h4>Zenix</h4>
-          <div class="price"><strong>Rp 900.000</strong><span>/24 jam</span></div>
-          <a class="mini-btn" target="_blank" rel="noopener" href="https://wa.me/628116511751?text=Halo%20Admin%2C%20saya%20mau%20sewa%20Zenix%2C%20saya%20lihat%20di%20website">Chat &amp; Booking</a>
+          <div class="price"><strong>Rp 900.000</strong><span>/hari</span></div>
+          <div class="mini-btn-row">
+            <a class="mini-btn" target="_blank" rel="noopener" href="https://wa.me/628116511751?text=Saya%20lihat%20di%20website%20RCP%2C%20mau%20sewa%20Zenix%2C%20apakah%20unit%20Zenix%20tersedia%20Admin%20Bibi%3F">Admin Bibi</a>
+            <a class="mini-btn" target="_blank" rel="noopener" href="https://wa.me/628116511753?text=Saya%20lihat%20di%20website%20RCP%2C%20mau%20sewa%20Zenix%2C%20apakah%20unit%20Zenix%20tersedia%20Admin%20Salsa%3F">Admin Salsa</a>
+          </div>
         </div>
       </div>
       <div class="car-card">
         <div class="car-photo"><img src="images/cars/28.Hiace.webp" alt="Hiace"></div>
         <div class="car-info">
           <span class="tag">Minibus</span><h4>Hiace</h4>
-          <div class="price"><strong>Rp 1.000.000</strong><span>/24 jam</span></div>
-          <a class="mini-btn" target="_blank" rel="noopener" href="https://wa.me/628116511751?text=Halo%20Admin%2C%20saya%20mau%20sewa%20Hiace%2C%20saya%20lihat%20di%20website">Chat &amp; Booking</a>
+          <div class="price"><strong>Rp 1.000.000</strong><span>/hari</span></div>
+          <div class="mini-btn-row">
+            <a class="mini-btn" target="_blank" rel="noopener" href="https://wa.me/628116511751?text=Saya%20lihat%20di%20website%20RCP%2C%20mau%20sewa%20Hiace%2C%20apakah%20unit%20Hiace%20tersedia%20Admin%20Bibi%3F">Admin Bibi</a>
+            <a class="mini-btn" target="_blank" rel="noopener" href="https://wa.me/628116511753?text=Saya%20lihat%20di%20website%20RCP%2C%20mau%20sewa%20Hiace%2C%20apakah%20unit%20Hiace%20tersedia%20Admin%20Salsa%3F">Admin Salsa</a>
+          </div>
         </div>
       </div>
       <div class="car-card">
         <div class="car-photo"><img src="images/cars/22.Pajero.webp" alt="Pajero" loading="lazy" width="640" height="400"></div>
         <div class="car-info">
           <span class="tag">SUV Premium</span><h4>Pajero</h4>
-          <div class="price"><strong>Rp 1.300.000</strong><span>/24 jam</span></div>
-          <a class="mini-btn" target="_blank" rel="noopener" href="https://wa.me/628116511751?text=Halo%20Admin%2C%20saya%20mau%20sewa%20Pajero%2C%20saya%20lihat%20di%20website">Chat &amp; Booking</a>
+          <div class="price"><strong>Rp 1.300.000</strong><span>/hari</span></div>
+          <div class="mini-btn-row">
+            <a class="mini-btn" target="_blank" rel="noopener" href="https://wa.me/628116511751?text=Saya%20lihat%20di%20website%20RCP%2C%20mau%20sewa%20Pajero%2C%20apakah%20unit%20Pajero%20tersedia%20Admin%20Bibi%3F">Admin Bibi</a>
+            <a class="mini-btn" target="_blank" rel="noopener" href="https://wa.me/628116511753?text=Saya%20lihat%20di%20website%20RCP%2C%20mau%20sewa%20Pajero%2C%20apakah%20unit%20Pajero%20tersedia%20Admin%20Salsa%3F">Admin Salsa</a>
+          </div>
         </div>
       </div>
       <div class="car-card">
         <div class="car-photo"><img src="images/cars/23.Fortuner.webp" alt="Fortuner" loading="lazy" width="640" height="400"></div>
         <div class="car-info">
           <span class="tag">SUV Premium</span><h4>Fortuner</h4>
-          <div class="price"><strong>Rp 1.300.000</strong><span>/24 jam</span></div>
-          <a class="mini-btn" target="_blank" rel="noopener" href="https://wa.me/628116511751?text=Halo%20Admin%2C%20saya%20mau%20sewa%20Fortuner%2C%20saya%20lihat%20di%20website">Chat &amp; Booking</a>
+          <div class="price"><strong>Rp 1.300.000</strong><span>/hari</span></div>
+          <div class="mini-btn-row">
+            <a class="mini-btn" target="_blank" rel="noopener" href="https://wa.me/628116511751?text=Saya%20lihat%20di%20website%20RCP%2C%20mau%20sewa%20Fortuner%2C%20apakah%20unit%20Fortuner%20tersedia%20Admin%20Bibi%3F">Admin Bibi</a>
+            <a class="mini-btn" target="_blank" rel="noopener" href="https://wa.me/628116511753?text=Saya%20lihat%20di%20website%20RCP%2C%20mau%20sewa%20Fortuner%2C%20apakah%20unit%20Fortuner%20tersedia%20Admin%20Salsa%3F">Admin Salsa</a>
+          </div>
         </div>
       </div>
       <div class="car-card">
         <div class="car-photo"><img src="images/cars/36.Alphard2.webp" alt="Alphard" loading="lazy" width="640" height="400"></div>
         <div class="car-info">
           <span class="tag">VIP</span><h4>Alphard</h4>
-          <div class="price"><strong>Rp 2.500.000</strong><span>/24 jam</span></div>
-          <a class="mini-btn" target="_blank" rel="noopener" href="https://wa.me/628116511751?text=Halo%20Admin%2C%20saya%20mau%20sewa%20Alphard%2C%20saya%20lihat%20di%20website">Chat &amp; Booking</a>
+          <div class="price"><strong>Rp 2.500.000</strong><span>/hari</span></div>
+          <div class="mini-btn-row">
+            <a class="mini-btn" target="_blank" rel="noopener" href="https://wa.me/628116511751?text=Saya%20lihat%20di%20website%20RCP%2C%20mau%20sewa%20Alphard%2C%20apakah%20unit%20Alphard%20tersedia%20Admin%20Bibi%3F">Admin Bibi</a>
+            <a class="mini-btn" target="_blank" rel="noopener" href="https://wa.me/628116511753?text=Saya%20lihat%20di%20website%20RCP%2C%20mau%20sewa%20Alphard%2C%20apakah%20unit%20Alphard%20tersedia%20Admin%20Salsa%3F">Admin Salsa</a>
+          </div>
         </div>
       </div>
     </div>
@@ -700,7 +770,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <div class="svc-grid">
       <ul class="svc-list">
-        <li><span class="num">1</span><p><b>Durasi sewa 24 jam,</b> pemakaian maksimal hingga pukul 23:00.</p></li>
+        <li><span class="num">1</span><p><b>Durasi sewa dihitung per hari,</b> unit wajib dikembalikan paling lambat pukul 23.00.</p></li>
         <li><span class="num">2</span><p><b>Tambahan driver</b> dikenakan biaya Rp150.000/hari.</p></li>
         <li><span class="num">3</span><p><b>Kelebihan waktu (overtime)</b> dihitung 10% dari harga sewa harian per jam.</p></li>
         <li><span class="num">4</span><p><b>Perjalanan luar kota</b> tidak dikenakan biaya tambahan, mengikuti jarak &amp; waktu minimum yang berlaku.</p></li>
@@ -778,7 +848,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p><b>Jam Operasional Admin</b>Setiap hari, pukul 08.00 – 23.00 WIB</p>
       </div>
       <div class="map-embed">
-        <iframe src="https://maps.google.com/maps?q=RCP%20GARAGE,3.5203721,98.665638&z=17&output=embed"
+        <iframe src="https://maps.google.com/maps?q=3.520377355755714,98.66561798532757&z=17&output=embed"
           loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Lokasi Garasi RCP"></iframe>
       </div>
       <a class="map-link" target="_blank" rel="noopener" href="https://maps.app.goo.gl/q5fF7xswhSoQP7Hi9">📍 Buka Lokasi Garasi di Google Maps</a>
